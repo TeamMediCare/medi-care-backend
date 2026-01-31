@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: "17"
+          java-version: 17
 
       - name: Docker Login
         uses: docker/login-action@v3
@@ -39,36 +39,41 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
+          port: 22
+          script_stop: true
           script: |
             set -e
-
             mkdir -p ~/app
             cd ~/app
 
-            # docker-compose.yml이 EC2에 없으면 여기서 생성 (최초 1회용)
-            if [ ! -f docker-compose.yml ]; then
-              cat > docker-compose.yml << 'EOF'
-              services:
-                backend-prod:
-                  image: tony0103/careplan-backend:latest
-                  container_name: careplan-backend
-                  env_file:
-                    - .env
-                  ports:
-                    - "8080:8080"
-                  restart: always
-              EOF
-            fi
+            # (1) docker-compose.yml 생성/갱신
+            printf "%s\n" \
+              "services:" \
+              "  backend-prod:" \
+              "    image: tony0103/careplan-backend:latest" \
+              "    container_name: careplan-backend" \
+              "    env_file:" \
+              "      - .env" \
+              "    ports:" \
+              "      - \"8080:8080\"" \
+              "    restart: always" \
+              > docker-compose.yml
 
-            # 배포 때마다 .env 갱신
-            cat > .env << 'EOF'
-            SPRING_PROFILES_ACTIVE=prod
-            DB_URL=${{ secrets.DB_URL }}
-            DB_USERNAME=${{ secrets.DB_USERNAME }}
-            DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-            JWT_SECRET=${{ secrets.JWT_SECRET }}
-            EOF
+            # (2) 배포 때마다 .env 갱신
+            printf "%s\n" \
+              "SPRING_PROFILES_ACTIVE=prod" \
+              "DB_URL=${{ secrets.DB_URL }}" \
+              "DB_USERNAME=${{ secrets.DB_USERNAME }}" \
+              "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" \
+              "JWT_SECRET=${{ secrets.JWT_SECRET }}" \
+              > .env
 
+            # (3) 최신 이미지 pull + 재기동
             docker compose pull backend-prod
             docker compose up -d backend-prod
+
+            # (4) 찌꺼기 정리
             docker image prune -f
+
+            # (5) 확인
+            docker ps

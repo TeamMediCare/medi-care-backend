@@ -36,3 +36,6 @@ out/
 ### VS Code ###
 .vscode/
 application-local.yml
+*.yml
+hs_err_pid18272.log
+init/init.sql

@@ -1,8 +1,8 @@
-package com.careplan.backend.auth.controller;
+package com.careplan.backend.domain.auth.controller;
 
-import com.careplan.backend.auth.dto.LoginRequest;
-import com.careplan.backend.auth.dto.LoginResponse;
-import com.careplan.backend.auth.service.AuthService;
+import com.careplan.backend.domain.auth.dto.LoginRequest;
+import com.careplan.backend.domain.auth.dto.LoginResponse;
+import com.careplan.backend.domain.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

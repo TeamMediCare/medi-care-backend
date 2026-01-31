@@ -1,7 +1,7 @@
-package com.careplan.backend.medication.repository;
+package com.careplan.backend.domain.medication.repository;
 
-import com.careplan.backend.medication.entity.ConsultationStatus;
-import com.careplan.backend.medication.entity.MedicationConsultation;
+import com.careplan.backend.domain.medication.entity.ConsultationStatus;
+import com.careplan.backend.domain.medication.entity.MedicationConsultation;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

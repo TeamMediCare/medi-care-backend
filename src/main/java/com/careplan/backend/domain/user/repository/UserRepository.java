@@ -1,6 +1,6 @@
-package com.careplan.backend.user.repository;
+package com.careplan.backend.domain.user.repository;
 
-import com.careplan.backend.user.entity.User;
+import com.careplan.backend.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

@@ -1,9 +1,9 @@
-package com.careplan.backend.auth.service;
+package com.careplan.backend.domain.auth.service;
 
-import com.careplan.backend.auth.dto.LoginRequest;
-import com.careplan.backend.auth.dto.LoginResponse;
-import com.careplan.backend.user.entity.User;
-import com.careplan.backend.user.repository.UserRepository;
+import com.careplan.backend.domain.auth.dto.LoginRequest;
+import com.careplan.backend.domain.auth.dto.LoginResponse;
+import com.careplan.backend.domain.user.entity.User;
+import com.careplan.backend.domain.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

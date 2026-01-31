@@ -1,6 +1,6 @@
 package com.careplan.backend.global.security;
 
-import com.careplan.backend.user.entity.User;
+import com.careplan.backend.domain.user.entity.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

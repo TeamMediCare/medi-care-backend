@@ -1,4 +1,4 @@
-package com.careplan.backend.user.entity;
+package com.careplan.backend.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.careplan.backend.auth.dto;
+package com.careplan.backend.domain.auth.dto;
 
 public record LoginRequest(
         String employeeNumber,

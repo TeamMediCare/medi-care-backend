@@ -1,4 +1,4 @@
-package com.careplan.backend.config;
+package com.careplan.backend.global.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

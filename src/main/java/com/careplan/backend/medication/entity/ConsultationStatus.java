@@ -1,4 +1,4 @@
-package com.careplan.backend.entity;
+package com.careplan.backend.medication.entity;
 
 public enum ConsultationStatus {
     WAITING("답변 대기"),

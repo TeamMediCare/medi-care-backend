@@ -1,6 +1,6 @@
-package com.careplan.backend.dto;
+package com.careplan.backend.medication.dto;
 
-import com.careplan.backend.entity.MedicationConsultation;
+import com.careplan.backend.medication.entity.MedicationConsultation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Getter;
 

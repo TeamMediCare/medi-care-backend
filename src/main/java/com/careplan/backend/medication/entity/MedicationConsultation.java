@@ -1,4 +1,4 @@
-package com.careplan.backend.entity;
+package com.careplan.backend.medication.entity;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;

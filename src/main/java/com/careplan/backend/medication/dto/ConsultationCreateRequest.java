@@ -1,4 +1,4 @@
-package com.careplan.backend.dto;
+package com.careplan.backend.medication.dto;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;

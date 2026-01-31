@@ -1,7 +1,10 @@
-package com.careplan.backend.controller;
+package com.careplan.backend.medication.controller;
 
-import com.careplan.backend.dto.*;
-import com.careplan.backend.service.MedicationConsultationService;
+import com.careplan.backend.medication.dto.ConsultationAnswerRequest;
+import com.careplan.backend.medication.dto.ConsultationCreateRequest;
+import com.careplan.backend.medication.dto.ConsultationDetailResponse;
+import com.careplan.backend.medication.dto.ConsultationListResponse;
+import com.careplan.backend.medication.service.MedicationConsultationService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;

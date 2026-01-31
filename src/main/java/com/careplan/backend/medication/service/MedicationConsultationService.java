@@ -1,8 +1,11 @@
-package com.careplan.backend.service;
+package com.careplan.backend.medication.service;
 
-import com.careplan.backend.dto.*;
-import com.careplan.backend.entity.MedicationConsultation;
-import com.careplan.backend.repository.MedicationConsultationRepository;
+import com.careplan.backend.medication.dto.ConsultationAnswerRequest;
+import com.careplan.backend.medication.dto.ConsultationCreateRequest;
+import com.careplan.backend.medication.dto.ConsultationDetailResponse;
+import com.careplan.backend.medication.dto.ConsultationListResponse;
+import com.careplan.backend.medication.entity.MedicationConsultation;
+import com.careplan.backend.medication.repository.MedicationConsultationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

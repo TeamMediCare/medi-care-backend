@@ -43,6 +43,18 @@ public class User {
     @Column(length = 10)
     private String gender;
 
+    @Column(name = "latitude")
+    private Double latitude;
+
+    @Column(name = "longitude")
+    private Double longitude;
+
+    @Column(name = "preferred_days", length = 100)
+    private String preferredDays;
+
+    @Column(name = "coverage_amount")
+    private Integer coverageAmount;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
@@ -55,6 +67,19 @@ public class User {
     @PreUpdate
     void preUpdate() {
         this.updatedAt = LocalDateTime.now();
+    }
+
+    public void updateLocation(Double latitude, Double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public void updatePreferredDays(String preferredDays) {
+        this.preferredDays = preferredDays;
+    }
+
+    public void updateCoverageAmount(Integer coverageAmount) {
+        this.coverageAmount = coverageAmount;
     }
 
     public enum Role {
